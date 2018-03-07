@@ -33,7 +33,7 @@ export class LoginPage {
       console.log(result);
       console.log('Usuário entrou no sistema com sucesso.');
       if(result){
-        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage);
       }
     } catch (e) {
       console.log(e);
