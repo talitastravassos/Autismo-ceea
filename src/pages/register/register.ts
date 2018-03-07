@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { User } from '../../models/user';
 
 import { AngularFireAuth } from 'angularfire2/auth'
@@ -16,7 +16,16 @@ export class RegisterPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public alertCtrl: AlertController,
     public cadastro: AngularFireAuth) {
+  }
+
+  alert(message: string){
+    this.alertCtrl.create({
+      title: 'Erro!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
   }
 
   async register(user: User) {
@@ -24,8 +33,10 @@ export class RegisterPage {
       const result = await this.cadastro.auth.createUserWithEmailAndPassword(user.email, user.password);
       console.log(result);
       console.log('Usuário cadastrado com sucesso');
-    } catch (e) {
-      console.log(e);
+      this.alert('Sucesso! Usuário foi cadastrado no sistema');
+    } catch (error) {      
+      this.alert(error.message);
+      console.log(error);
     }
   }
 
