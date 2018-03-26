@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CONFIG } from './app.firebase.config';
+import { UserdataProvider } from '../providers/userdata/userdata';
 
 
 
@@ -49,7 +50,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserdataProvider
   ]
 })
 export class AppModule {}
