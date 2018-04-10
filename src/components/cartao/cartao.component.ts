@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
+import { Cartao } from './cartao.model';
+import { Component, OnInit } from '@angular/core';
+import { CartaoService } from './cartao.service';
 
-/**
- * Generated class for the CartaoComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'cartao',
-  templateUrl: 'cartao.component.html'
+  templateUrl: 'cartao.component.html',
+  providers: [
+    CartaoService
+  ]
 })
-export class CartaoComponent {
+export class CartaoComponent implements OnInit {
 
-  text: string;
+  random: number = Math.floor((Math.random() * 14) + 1);
 
-  constructor() {
-    console.log('Hello CartaoComponent Component');
-    this.text = 'Hello World Component';
+  public cartaos: Cartao[]
+  public randomCartao: Cartao
+
+  constructor(private cartaoService: CartaoService) {
+    console.log('Hello CartaoComponent Component')
+    //console.log(this.cartaoService.getCartao())
+  }
+
+  ngOnInit() {
+    this.cartaos = this.cartaoService.getCartao()
+    //this.random = Math.floor((Math.random() * (this.cartaos.length)) + 1);
+
+    //this.cartaos = this.cartaoService.getCartao()
+
+    console.log(this.cartaos)
+    console.log(this.random)
   }
 
 }

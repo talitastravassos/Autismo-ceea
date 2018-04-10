@@ -8,6 +8,8 @@ import { AngularFireAuth } from 'angularfire2/auth'
 })
 export class HomePage {
 
+  public refresher;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -15,10 +17,15 @@ export class HomePage {
 
   }
 
+  doRefresh() {
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
 
     this.authFire.authState.subscribe( data => console.log(data) );
+
   }
 
 

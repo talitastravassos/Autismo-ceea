@@ -1,6 +1,12 @@
-<!-- Generated template for the CartaoComponent component -->
-<div>
 
-  <h1>{{ text }}</h1>
-
-</div>
+<ion-card *ngFor="let cartao of cartaos">
+  <img [src]="cartao.image" *ngIf="cartao.id == random"/>
+  <ion-card-content *ngIf="cartao.id == random">
+    <ion-card-title>
+      {{ cartao.title }}
+      </ion-card-title>
+    <p>
+      {{ cartao.description }}
+    </p>
+  </ion-card-content>
+</ion-card>
