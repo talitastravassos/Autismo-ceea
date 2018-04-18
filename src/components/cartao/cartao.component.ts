@@ -11,7 +11,7 @@ import { CartaoService } from './cartao.service';
 })
 export class CartaoComponent implements OnInit {
 
-  random: number = Math.floor((Math.random() * 14) + 1);
+  random: number = Math.floor((Math.random() * 64) + 1);
 
   public cartaos: Cartao[]
   public randomCartao: Cartao

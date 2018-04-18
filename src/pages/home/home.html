@@ -1,18 +1,26 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Autismo - CEEA</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <cartao>
-
-  </cartao>
-    <!-- Real floating action button, fixed. It will not scroll with the content -->
-    <ion-fab right bottom>
-      <button ion-fab  (click)="doRefresh()"><ion-icon name="refresh"></ion-icon></button>      
-    </ion-fab>
+  <cartao class="card"></cartao>
+<br>
   
+  <div class="botao">
+    <button ion-button round color="primary">Opção 1</button>
+    <button ion-button round color="secondary">Opção 2</button>
+    <button ion-button round color="danger">Opção 3</button>
+  </div>
+
+  <!-- Real floating action button, fixed. It will not scroll with the content -->
+  <ion-fab right bottom>
+    <button ion-fab (click)="doRefresh()">
+      <ion-icon name="refresh"></ion-icon>
+    </button>
+  </ion-fab>
+
 
 </ion-content>
