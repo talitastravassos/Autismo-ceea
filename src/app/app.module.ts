@@ -17,6 +17,7 @@ import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { UserdataProvider } from '../providers/userdata/userdata';
+import { BotaosComponent } from '../components/botaos/botaos';
 
 
 
@@ -25,6 +26,7 @@ import { UserdataProvider } from '../providers/userdata/userdata';
     MyApp,
     AboutPage,
     CartaoComponent,
+    BotaosComponent,
     ContactPage,
     HomePage,
     TabsPage,

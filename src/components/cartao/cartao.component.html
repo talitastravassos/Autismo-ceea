@@ -1,6 +1,6 @@
 
 <ion-card *ngFor="let cartao of cartaos">
-  <img src = "{{ cartao.image }}" *ngIf="cartao.id == random" class="imagem"/>
+  <img src= "{{ cartao.image }}" *ngIf="cartao.id == random" class="imagem"/>
   <ion-card-content *ngIf="cartao.id == random" class="container" >
     <ion-card-title>
       {{ cartao.title }}
