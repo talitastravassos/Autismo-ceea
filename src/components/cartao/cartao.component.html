@@ -1,12 +1,23 @@
 
-<ion-card *ngFor="let cartao of cartaos">
-  <img src= "{{ cartao.image }}" *ngIf="cartao.id == random" class="imagem"/>
-  <ion-card-content *ngIf="cartao.id == random" class="container" >
+<ion-card>
+  <img src= "{{ cartao.image }}" class="imagem"/>
+  <ion-card-content  class="container" >
     <ion-card-title>
       {{ cartao.title }}
       </ion-card-title>
     <p>
       {{ cartao.description }}
     </p>
+    
+  </ion-card-content>
+</ion-card>
+
+<br>
+
+<ion-card class="botao">
+  <ion-card-content>
+  <button ion-button round color="primary" (click)="verificarResposta()"> {{ botao1.title }} </button>
+  <button ion-button round color="secondary" (click)="verificarResposta()">{{ botao2.title }}</button>
+  <button ion-button round color="danger" (click)="verificarResposta()">{{ botao3.title }}</button>
   </ion-card-content>
 </ion-card>

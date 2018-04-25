@@ -393,4 +393,10 @@ export class CartaoService {
 
     return this.card
   }
+
+  public getCartaoRandom(): Cartao {
+    let random = Math.floor((Math.random() * 64) + 1);
+
+    return this.card[random]
+  }
 }

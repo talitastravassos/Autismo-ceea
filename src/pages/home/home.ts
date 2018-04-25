@@ -8,7 +8,7 @@ import { AngularFireAuth } from 'angularfire2/auth'
 })
 export class HomePage {
 
-  public refresher;
+  //public refresher;
 
   constructor(
     public navCtrl: NavController,
