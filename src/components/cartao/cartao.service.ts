@@ -275,7 +275,7 @@ export class CartaoService {
     },
     {
       "id": 46,
-      "image": "assets/imgs/45-amassar.jpg",
+      "image": "assets/imgs/45-pintar.jpg",
       "title": "Pintar",
       "description": "Reproduzir por linhas e/ou por cores, colorir desenhos."
     },
