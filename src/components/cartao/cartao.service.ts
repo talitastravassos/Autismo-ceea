@@ -389,11 +389,16 @@ export class CartaoService {
     }
   ]
 
+  /**
+   * funçao que fornece o array com todos os cartões
+   */
   public getCartao(): Array<Cartao> {
 
     return this.card
   }
-
+  /**
+   * Função que fornece apenas um cartão escolhido randomicamente
+   */
   public getCartaoRandom(): Cartao {
     let random = Math.floor((Math.random() * 64) + 1);
 
