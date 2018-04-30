@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +20,11 @@ export class HomePage {
 
   doRefresh() {
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  }
+
+  logout(){
+    this.authFire.auth.signOut();
+    this.navCtrl.setRoot(LoginPage);
   }
 
   ionViewDidLoad() {
