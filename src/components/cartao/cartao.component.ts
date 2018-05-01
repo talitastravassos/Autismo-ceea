@@ -1,7 +1,8 @@
+import { RespostaPage } from './../../pages/resposta/resposta';
 import { Cartao } from './cartao.model';
 import { Component, OnInit } from '@angular/core';
 import { CartaoService } from './cartao.service';
-import { AlertController } from 'ionic-angular';
+import { AlertController, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'cartao',
@@ -26,6 +27,7 @@ export class CartaoComponent implements OnInit {
   //public resposta: Cartao
 
   constructor(
+    public navCtrl: NavController,
     private cartaoService: CartaoService,
     public alertCtrl: AlertController) {
     console.log('Hello CartaoComponent Component')
@@ -72,12 +74,14 @@ export class CartaoComponent implements OnInit {
     if(resposta == this.cartao){
       this.acertos++;
       console.log("acertos: ", this.acertos)
-      this.opcoes()
+      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
+      //this.opcoes()
 
     } else {
       this.erros++;
       console.log("Erros: ", this.erros)
-      this.opcoes()
+      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
+      //this.opcoes()
     }
   }
 

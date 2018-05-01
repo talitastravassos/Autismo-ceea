@@ -22,7 +22,7 @@ export class RegisterPage {
 
   alert(message: string){
     this.alertCtrl.create({
-      title: 'Erro!',
+      title: 'Info!',
       subTitle: message,
       buttons: ['OK']
     }).present();
