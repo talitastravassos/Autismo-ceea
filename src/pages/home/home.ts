@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { LoginPage } from '../login/login';
+import { JogoPage } from '../jogo/jogo';
 
 @Component({
   selector: 'page-home',
@@ -21,6 +22,10 @@ export class HomePage {
 
   doRefresh() {
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
+  }
+
+  jogo(){
+    this.navCtrl.push(JogoPage)
   }
 
   logout(){

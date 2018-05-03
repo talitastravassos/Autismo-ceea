@@ -6,15 +6,21 @@
 
 <ion-content padding>
 
-  <cartao class="card"></cartao>
+  <div padding class="logo">
+    <img src="assets/imgs/logo.png" alt="">
+  </div>
+  
   <br>
 
-  <!-- Real floating action button, fixed. It will not scroll with the content -->
+  <div class="botao">
+    <button ion-button (click)="jogo()"> INICIAR JOGO </button>
+  </div>
+  <!--
   <ion-fab right bottom>
     <button ion-fab (click)="doRefresh()">
       <ion-icon name="refresh"></ion-icon>
     </button>
-  </ion-fab>
+  </ion-fab>-->
   <ion-fab left bottom>
     <button ion-fab (click)="logout()">
       <ion-icon name="log-out"></ion-icon>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Cartao } from '../../components/cartao/cartao.model';
-import { HomePage } from '../home/home';
+import { JogoPage } from '../jogo/jogo';
 
 /**
  * Generated class for the RespostaPage page.
@@ -30,7 +30,7 @@ export class RespostaPage {
    * Push na proxima pagina
    */
   public proximo() {
-    this.navCtrl.push(HomePage, { acertos: this.acertos, erros: this.erros })
+    this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros })
   }
 
   ionViewDidLoad() {

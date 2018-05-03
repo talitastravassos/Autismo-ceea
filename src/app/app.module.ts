@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
+import { HomePage } from '../pages/home/home';
+import { JogoPage } from '../pages/jogo/jogo';
 import { RespostaPage } from '../pages/resposta/resposta';
 import { ResultadoPage } from './../pages/resultado/resultado';
 import { CartaoComponent } from '../components/cartao/cartao.component';
@@ -28,7 +29,8 @@ import { UserdataProvider } from '../providers/userdata/userdata';
     LoginPage,
     RegisterPage,
     RespostaPage,
-    ResultadoPage
+    ResultadoPage,
+    JogoPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { UserdataProvider } from '../providers/userdata/userdata';
     LoginPage,
     RegisterPage,
     RespostaPage,
-    ResultadoPage    
+    ResultadoPage,
+    JogoPage    
   ],
   providers: [
     StatusBar,
