@@ -18,6 +18,8 @@ import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { UserdataProvider } from '../providers/userdata/userdata';
+import { RodadaProvider } from '../providers/rodada/rodada';
+
 
 
 @NgModule({
@@ -52,7 +54,8 @@ import { UserdataProvider } from '../providers/userdata/userdata';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserdataProvider
+    UserdataProvider,
+    RodadaProvider
   ]
 })
 export class AppModule {}

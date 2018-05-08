@@ -2,43 +2,46 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Cartao } from '../../components/cartao/cartao.model';
 import { JogoPage } from '../jogo/jogo';
-
-/**
- * Generated class for the RespostaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { RodadaProvider } from '../../providers/rodada/rodada';
 
 @IonicPage()
 @Component({
   selector: 'page-resposta',
   templateUrl: 'resposta.html',
+  providers: [
+    RodadaProvider
+  ]
 })
 export class RespostaPage {
 
   resposta: Cartao
-  acertos: number
-  erros: number
+  acertos: number = 0
+  erros: number = 0
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public rodadaProvider: RodadaProvider) {
   }
 
   /**
    * Push na proxima pagina
    */
   public proximo() {
-    this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros })
+    
+    if (this.navParams.get("acertos")) {
+      this.acertos++
+      this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros});     
+    } if (this.navParams.get("erros")) {
+      this.erros++
+      this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros});
+    }
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RespostaPage');
 
     this.resposta = this.navParams.get("resposta");
-    this.acertos = this.navParams.get("acertos");
-    this.erros = this.navParams.get("erros");
   }
 
 }

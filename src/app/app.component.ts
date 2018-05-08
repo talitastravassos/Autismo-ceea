@@ -3,6 +3,7 @@ import { Platform, Config } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserdataProvider } from '../providers/userdata/userdata';
+import { RodadaProvider } from '../providers/rodada/rodada';
 
 import { HomePage } from './../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -10,7 +11,8 @@ import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html',
   providers: [
-    UserdataProvider
+    UserdataProvider,
+    RodadaProvider
   ]
 })
 export class MyApp {

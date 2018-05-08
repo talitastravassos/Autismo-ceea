@@ -2,13 +2,15 @@ import { RespostaPage } from './../../pages/resposta/resposta';
 import { Cartao } from './cartao.model';
 import { Component, OnInit } from '@angular/core';
 import { CartaoService } from './cartao.service';
-import { AlertController, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { RodadaProvider } from '../../providers/rodada/rodada';
 
 @Component({
   selector: 'cartao',
   templateUrl: 'cartao.component.html',
   providers: [
-    CartaoService
+    CartaoService, 
+    RodadaProvider
   ]
 })
 export class CartaoComponent implements OnInit {
@@ -29,17 +31,8 @@ export class CartaoComponent implements OnInit {
   constructor(
     public navCtrl: NavController,
     private cartaoService: CartaoService,
-    public alertCtrl: AlertController) {
-    console.log('Hello CartaoComponent Component')
-  }
-
-  alert(message: string) {
-    this.alertCtrl.create({
-
-      title: 'Info!',
-      subTitle: message,
-      buttons: ['OK']
-    }).present();
+    public rodadaProvider: RodadaProvider) {
+      //console.log('Hello CartaoComponent Component')
   }
 
   /**
@@ -71,31 +64,18 @@ export class CartaoComponent implements OnInit {
    */
   public verificarResposta(resposta: Cartao) {
     console.log(resposta)
+
     if(resposta == this.cartao){
-      this.acertos++;
+      this.acertos++
       console.log("acertos: ", this.acertos)
       this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
-      //this.opcoes()
-
     } else {
-      this.erros++;
+      this.erros++
       console.log("Erros: ", this.erros)
       this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
-      //this.opcoes()
     }
-  }
 
-  /**
-   * função que gerencia a rodada em andamento
-   */
-  public rodada() {
-    for(let i = 1; i<=10; i++){
-      this.opcoes()
-    }
-    //this.alert("Voce Terminou a Partida!")
-    //this.rodada()    
   }
-
 
   ngOnInit() {
 
