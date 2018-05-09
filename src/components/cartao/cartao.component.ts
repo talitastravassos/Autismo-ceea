@@ -62,19 +62,26 @@ export class CartaoComponent implements OnInit {
   }
 
   /**
-   * Função que verifica se as respostas estao corretas e incrementa os erros e acertos
+   * Função que verifica se as respostas estao corretas e incrementa os erros, acertos e numero da
+   * rodada no sessionStorage
    */
   public verificarResposta(resposta: Cartao) {
+    let numRodada = 1;
+
     console.log(resposta)
 
     if(resposta == this.cartao){
       this.acertos++
       console.log("acertos: ", this.acertos)
-      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
+      this.rodadaProvider.setAcertos(this.acertos)// incrementa os acertos
+      this.rodadaProvider.setNumeroRodada(numRodada)// incrementa a rodada
+      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })// push na PageResposta
     } else {
       this.erros++
       console.log("Erros: ", this.erros)
-      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })
+      this.rodadaProvider.setErros(this.erros)// incrementa os erros
+      this.rodadaProvider.setNumeroRodada(numRodada)// incrementa a rodada
+      this.navCtrl.push(RespostaPage, { resposta: this.cartao, acertos: this.acertos, erros: this.erros })// push na PageResposta
     }
 
   }

@@ -36,9 +36,10 @@ export class ResultadoPage {
   /**
    * aproveitamento
    */
-  public aproveitamentoRodada() {
+  public aproveitamentoRodada(): number {
+    this.aproveitamento = (this.acertos/5) * 100;
 
-    
+    return Math.round(this.aproveitamento)    
   }
 
   ionViewDidLoad() {

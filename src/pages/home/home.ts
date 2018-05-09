@@ -14,9 +14,6 @@ import { RodadaProvider } from '../../providers/rodada/rodada';
 })
 export class HomePage {
 
-  acertos: number
-  erros: number
-
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,8 +38,6 @@ export class HomePage {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad HomePage');
-    this.acertos = this.navParams.get("acertos");
-    this.erros = this.navParams.get("erros");
 
     this.authFire.authState.subscribe( data => console.log(data) );
 

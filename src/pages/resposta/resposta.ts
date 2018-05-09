@@ -29,7 +29,7 @@ export class RespostaPage {
    * Push na proxima pagina
    */
   public proximo() {
-    let cont: number = this.rodadaProvider.getNumeroRodada()
+    let cont: number = this.rodadaProvider.getNumeroRodada()// contador da rodada para saber quando finalizar o jogo
     console.log("contador da rodada: ", cont)
 
     if (this.navParams.get("acertos")) {
@@ -37,7 +37,7 @@ export class RespostaPage {
       if (cont == 5) {
         this.navCtrl.setRoot(ResultadoPage)
       } else {
-        this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros });
+        this.navCtrl.push(JogoPage);
       }
     }
     if (this.navParams.get("erros")) {
@@ -45,7 +45,7 @@ export class RespostaPage {
       if (cont == 5) {
         this.navCtrl.setRoot(ResultadoPage)
       } else {
-        this.navCtrl.push(JogoPage, { acertos: this.acertos, erros: this.erros });
+        this.navCtrl.push(JogoPage);
       }
     }
   }
