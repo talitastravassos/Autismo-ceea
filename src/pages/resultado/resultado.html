@@ -1,18 +1,29 @@
-<!--
-  Generated template for the ResultadoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>resultado</ion-title>
+    <ion-title> Resultado </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Acertos: {{ acertos }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Erros: {{ erros }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="happy" item-start></ion-icon>
+      Aproveitamento:
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="resetRodada()"> INICIO </button>
 
 </ion-content>

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartaoService } from './cartao.service';
 import { NavController } from 'ionic-angular';
 import { RodadaProvider } from '../../providers/rodada/rodada';
+import { ResultadoPage } from '../../pages/resultado/resultado';
 
 @Component({
   selector: 'cartao',
@@ -39,6 +40,7 @@ export class CartaoComponent implements OnInit {
    * Função que determina as alternativas mostradas nos botões
    */
   public opcoes() {
+
     this.cartao = this.cartaoService.getCartaoRandom()
 
     if (this.random == 1) {

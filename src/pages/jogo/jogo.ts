@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RodadaProvider } from '../../providers/rodada/rodada';
+import { ResultadoPage } from '../resultado/resultado';
 
 
 @IonicPage()
@@ -12,7 +13,7 @@ import { RodadaProvider } from '../../providers/rodada/rodada';
   ]
 })
 export class JogoPage {
-
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -35,19 +36,28 @@ export class JogoPage {
       this.rodadaProvider.setNumeroRodada(numRodada)
     }
 
-
   }
+
+  /**
+   * finalizarRodada: função que finaliza a rodada e dá push na página resultado
+   */
+  public finalizarRodada() {
+    
+    if ( (this.rodadaProvider.getNumeroRodada()) == 5 )  {
+      this.navCtrl.setRoot(ResultadoPage)
+    }
+  }
+
+ 
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad JogoPage');
+    //this.finalizarRodada()
     this.contagemRodada()
     
     console.log("Acertos salvos no sessionStorage: ", this.rodadaProvider.getAcertos());
     console.log("Erros salvos no sessionStorage: ", this.rodadaProvider.getErros());
     console.log("Rodadas salvas no sessionStorage: ", this.rodadaProvider.getNumeroRodada());
 
-
-      //let rodada = JSON.parse(this.rodadaProvider.getRodadaData())
-      
   }
 }

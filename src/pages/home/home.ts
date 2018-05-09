@@ -3,10 +3,14 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { LoginPage } from '../login/login';
 import { JogoPage } from '../jogo/jogo';
+import { RodadaProvider } from '../../providers/rodada/rodada';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [
+    RodadaProvider
+  ]
 })
 export class HomePage {
 
@@ -16,7 +20,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private authFire: AngularFireAuth) {
+    private authFire: AngularFireAuth,
+    public rodadaProvider: RodadaProvider) {
 
   }
 
@@ -25,6 +30,7 @@ export class HomePage {
   }
 
   jogo(){
+    this.rodadaProvider.resetData()
     this.navCtrl.push(JogoPage)
   }
 
@@ -34,7 +40,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    //console.log('ionViewDidLoad HomePage');
     this.acertos = this.navParams.get("acertos");
     this.erros = this.navParams.get("erros");
 

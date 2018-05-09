@@ -1,25 +1,52 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ResultadoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { RodadaProvider } from '../../providers/rodada/rodada';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
   selector: 'page-resultado',
   templateUrl: 'resultado.html',
+  providers: [
+    RodadaProvider
+  ]
 })
 export class ResultadoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  acertos: number
+  erros: number
+  numeroRodadas: number
+  aproveitamento: number
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public rodadaProvider: RodadaProvider) {
+  }
+
+  /**
+   * resetRodada: função que reseta os dados da rodada atual salvos no sessionStorage 
+   * para iniciar um novo jogo.
+   */
+  public resetRodada() {
+    this.rodadaProvider.resetData()
+    this.navCtrl.setRoot(HomePage)
+  }
+
+  /**
+   * aproveitamento
+   */
+  public aproveitamentoRodada() {
+
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultadoPage');
+    this.acertos = this.rodadaProvider.getAcertos()
+    this.erros = this.rodadaProvider.getErros()
+    
+
   }
 
 }

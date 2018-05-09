@@ -33,7 +33,7 @@ export class RodadaProvider {
   }
 
   public setNumeroRodada(numero: number) {
-
+  
     if (Number(sessionStorage.getItem("numero")) == 0) {
       sessionStorage.setItem("numero", JSON.stringify(numero))
     } else {
@@ -57,4 +57,14 @@ export class RodadaProvider {
   public getNumeroRodada(): number {
     return Number(sessionStorage.getItem("numero"))
   }
+
+  /**
+   * resetData
+   */
+  public resetData() {
+    sessionStorage.removeItem("numero")
+    sessionStorage.removeItem("acertos")
+    sessionStorage.removeItem("erros")
+  }
 }
+
