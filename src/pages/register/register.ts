@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { User } from '../../models/user';
-
 import { AngularFireAuth } from 'angularfire2/auth'
+import { User } from '../../models/user';
+import { LoginPage } from './../login/login';
+
 
 @IonicPage()
 @Component({
@@ -38,7 +39,10 @@ export class RegisterPage {
       this.alert(error.message);
       console.log(error);
     }
+
+    this.navCtrl.setRoot(LoginPage)
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');

@@ -22,6 +22,7 @@ export class CartaoComponent implements OnInit {
   random: number = Math.floor((Math.random() * 3) + 1);
   acertos: number = 0
   erros: number = 0
+  rodada: number = (this.rodadaProvider.getNumeroRodada()) + 1;
 
   public cartao: Cartao
   public botao1: Cartao

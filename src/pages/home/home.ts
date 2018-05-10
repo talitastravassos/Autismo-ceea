@@ -4,12 +4,14 @@ import { AngularFireAuth } from 'angularfire2/auth'
 import { LoginPage } from '../login/login';
 import { JogoPage } from '../jogo/jogo';
 import { RodadaProvider } from '../../providers/rodada/rodada';
+import { UserdataProvider } from '../../providers/userdata/userdata';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
   providers: [
-    RodadaProvider
+    RodadaProvider,
+    UserdataProvider
   ]
 })
 export class HomePage {
@@ -18,6 +20,7 @@ export class HomePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private authFire: AngularFireAuth,
+    public userDataProvider: UserdataProvider,
     public rodadaProvider: RodadaProvider) {
 
   }
@@ -33,6 +36,7 @@ export class HomePage {
 
   logout(){
     this.authFire.auth.signOut();
+    this.userDataProvider.resetConfigData();
     this.navCtrl.setRoot(LoginPage);
   }
 

@@ -18,11 +18,25 @@ export class RespostaPage {
   resposta: Cartao
   acertos: number = 0
   erros: number = 0
+  isCorreto: string
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public rodadaProvider: RodadaProvider) {
+  }
+
+  /**
+   * isCorrect
+   */
+  public isCorrect(): string {
+    if ((this.navParams.get("acertos")) == 1) {
+      this.isCorreto = "Resposta correta!"
+    } else {
+      this.isCorreto = "Resposta errada!"
+    }
+
+    return this.isCorreto    
   }
 
   /**

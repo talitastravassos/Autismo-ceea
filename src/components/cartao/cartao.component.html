@@ -1,4 +1,11 @@
-<ion-card>
+<ion-card class="container">
+  <ion-row>
+    <ion-col>
+      <div>
+        {{ rodada }} de 5
+      </div>
+    </ion-col>
+  </ion-row>
   <img src="{{ cartao.image }}" class="imagem" />
   <ion-card-content class="container">
   </ion-card-content>
@@ -6,11 +13,11 @@
 
 <br>
 
-<ion-card class="container" >
+<ion-card class="container">
   <ion-card-content class="botao">
-      <ion-card-title>
-        O que está acontecendo na imagem exibida na tela?
-      </ion-card-title>
+    <ion-card-title>
+      O que está acontecendo na imagem exibida na tela?
+    </ion-card-title>
     <button ion-button round color="primary" (click)="verificarResposta(botao1)"> {{ botao1.title }} </button>
     <button ion-button round color="secondary" (click)="verificarResposta(botao2)">{{ botao2.title }}</button>
     <button ion-button round color="danger" (click)="verificarResposta(botao3)">{{ botao3.title }}</button>

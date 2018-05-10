@@ -15,18 +15,22 @@
 
 <ion-content padding>
 
-    <ion-card *ngIf="resposta" >
-        <img src="{{ resposta.image }}" class="imagem-resposta" />
-        <ion-card-content class="container">
-          <ion-card-title>
-            Resposta correta: <strong>{{ resposta.title }}</strong>
-          </ion-card-title>
-          <p>
-            Descrição: {{ resposta.description }}
-          </p>
-        </ion-card-content>
-      </ion-card>
-    
-    <button ion-button block (click)="proximo()">Próximo</button>    
+  <ion-card *ngIf="resposta">
+    <img src="{{ resposta.image }}" class="imagem-resposta" />
+    <ion-card-content class="container">
+      <ion-card-title>
+        {{ isCorrect() }}
+
+      </ion-card-title>
+      <p>
+        <strong>{{ resposta.title }}</strong>
+      </p>
+      <p>
+        Descrição: {{ resposta.description }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button block (click)="proximo()">Próximo</button>
 
 </ion-content>

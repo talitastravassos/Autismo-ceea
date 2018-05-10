@@ -36,4 +36,11 @@ export class UserdataProvider {
 
   }
 
+  /**
+   * resetConfigData
+   */
+  public resetConfigData() {
+    localStorage.removeItem(config_key_name)
+  }
+
 }
