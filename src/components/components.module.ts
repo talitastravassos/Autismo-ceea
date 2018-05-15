@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CartaoComponent } from './cartao/cartao.component';
-import { ResultadoComponent } from './resultado/resultado.component';
 @NgModule({
 	declarations: [
-    CartaoComponent,
-    ResultadoComponent],
+    CartaoComponent],
 	imports: [],
 	exports: [
-    CartaoComponent,
-    ResultadoComponent]
+    CartaoComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule {
+    
+}

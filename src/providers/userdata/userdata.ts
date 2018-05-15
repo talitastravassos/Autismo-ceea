@@ -11,7 +11,7 @@ export class UserdataProvider {
   }
 
   constructor() {
-    console.log('Hello UserdataProvider Provider');
+    //console.log('Hello UserdataProvider Provider');
   }
 
   getConfigData(): any{

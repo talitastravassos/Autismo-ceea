@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Últimas Pontuações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list *ngIf="cont">
+        <ion-list-header>
+            Partida {{ cont }}
+          </ion-list-header>
+        <ion-item>
+          <ion-icon name="checkmark-circle" item-start></ion-icon>
+          Acertos: {{ acertos }}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="close-circle" item-start></ion-icon>
+          Erros: {{ erros }}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="happy" item-start></ion-icon>
+          Aproveitamento: {{ aproveitamento }}%
+        </ion-item>
+      </ion-list>
+
+</ion-content>

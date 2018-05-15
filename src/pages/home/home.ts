@@ -5,6 +5,7 @@ import { LoginPage } from '../login/login';
 import { JogoPage } from '../jogo/jogo';
 import { RodadaProvider } from '../../providers/rodada/rodada';
 import { UserdataProvider } from '../../providers/userdata/userdata';
+import { PontuacaoPage } from '../pontuacao/pontuacao';
 
 @Component({
   selector: 'page-home',
@@ -32,6 +33,10 @@ export class HomePage {
   jogo(){
     this.rodadaProvider.resetData()
     this.navCtrl.push(JogoPage)
+  }
+
+  goToScores(){
+    this.navCtrl.push(PontuacaoPage)
   }
 
   logout(){

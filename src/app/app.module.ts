@@ -9,8 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { JogoPage } from '../pages/jogo/jogo';
 import { RespostaPage } from '../pages/resposta/resposta';
 import { ResultadoPage } from './../pages/resultado/resultado';
+import { PontuacaoPage } from '../pages/pontuacao/pontuacao';
 import { CartaoComponent } from '../components/cartao/cartao.component';
-import { ResultadoComponent } from '../components/resultado/resultado.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,18 +21,17 @@ import { UserdataProvider } from '../providers/userdata/userdata';
 import { RodadaProvider } from '../providers/rodada/rodada';
 
 
-
 @NgModule({
   declarations: [
     MyApp,
     CartaoComponent,
-    ResultadoComponent,
     HomePage,
     LoginPage,
     RegisterPage,
     RespostaPage,
     ResultadoPage,
-    JogoPage
+    JogoPage,
+    PontuacaoPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,8 @@ import { RodadaProvider } from '../providers/rodada/rodada';
     RegisterPage,
     RespostaPage,
     ResultadoPage,
-    JogoPage    
+    JogoPage,
+    PontuacaoPage    
   ],
   providers: [
     StatusBar,
@@ -58,4 +58,6 @@ import { RodadaProvider } from '../providers/rodada/rodada';
     RodadaProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+  
+}
