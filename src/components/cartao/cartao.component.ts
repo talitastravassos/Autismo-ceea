@@ -16,8 +16,6 @@ import { ResultadoPage } from '../../pages/resultado/resultado';
 })
 export class CartaoComponent implements OnInit {
 
-  //variavel que define a imagem que vai ser mostrada
-  //randomico: number = Math.floor((Math.random() * 64) + 1);
   //variavel que define qual botao vai exibir a resposta correta
   random: number = Math.floor((Math.random() * 3) + 1);
   acertos: number = 0
@@ -46,18 +44,27 @@ export class CartaoComponent implements OnInit {
 
     if (this.random == 1) {
       this.botao1 = this.cartao;
-      this.botao2 = this.cartaoService.getCartaoRandom();
-      this.botao3 = this.cartaoService.getCartaoRandom();
+      
+      while (this.botao1 == this.botao2 || this.botao1 == this.botao3 || this.botao2 == this.botao3) {
+        this.botao2 = this.cartaoService.getCartaoRandom();
+        this.botao3 = this.cartaoService.getCartaoRandom(); 
+      }
 
     } else if (this.random == 2) {
-      this.botao1 = this.cartaoService.getCartaoRandom();
       this.botao2 = this.cartao;
-      this.botao3 = this.cartaoService.getCartaoRandom();
+      
+      while (this.botao2 == this.botao1 || this.botao2 == this.botao3 || this.botao1 == this.botao3) {
+        this.botao1 = this.cartaoService.getCartaoRandom();
+        this.botao3 = this.cartaoService.getCartaoRandom();
+      }
 
     } else if (this.random == 3) {
-      this.botao1 = this.cartaoService.getCartaoRandom();
-      this.botao2 = this.cartaoService.getCartaoRandom();
       this.botao3 = this.cartao;
+
+      while (this.botao3 == this.botao1 || this.botao3 == this.botao2 || this.botao1 == this.botao2) {
+        this.botao1 = this.cartaoService.getCartaoRandom();
+        this.botao2 = this.cartaoService.getCartaoRandom();
+      }
 
     }
   }

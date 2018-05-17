@@ -18,10 +18,6 @@ export class PontuacaoPage {
   erros: Array<number>
   aproveitamento: Array<number>
   cont: number
-  pontuacaoObj_1: any
-  pontuacaoObj_2: any
-  pontuacaoObj_3: any
-  pontuacaoObj_4: any
 
   pontuacoesAtuais: Array<Object>
 
@@ -62,11 +58,6 @@ export class PontuacaoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PontuacaoPage');
     this.cont = this.pontuacaoService.getContagem()
-
-    this.pontuacaoObj_1 = this.pontuacaoService.getPontuacao(1)
-    this.pontuacaoObj_2 = this.pontuacaoService.getPontuacao(2)
-    this.pontuacaoObj_3 = this.pontuacaoService.getPontuacao(3)
-    this.pontuacaoObj_4 = this.pontuacaoService.getPontuacao(4)
 
     this.pontuacoesAtuais = this.getArrayPontuacoes()
     console.log("Pontuações Atuais: ", this.pontuacoesAtuais)
