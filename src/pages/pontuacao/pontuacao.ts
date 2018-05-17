@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PontuacaoService } from './pontuacao.service';
-import { Score } from '../../models/score';
 
 @IonicPage()
 @Component({
@@ -19,10 +18,12 @@ export class PontuacaoPage {
   erros: Array<number>
   aproveitamento: Array<number>
   cont: number
-  //i: number
+  pontuacaoObj_1: any
+  pontuacaoObj_2: any
+  pontuacaoObj_3: any
+  pontuacaoObj_4: any
 
-  pontuacoes: Array<Score>
-  pontuacoesAtuais: Array<Score>
+  pontuacoesAtuais: Array<Object>
 
   constructor(
     public navCtrl: NavController, 
@@ -33,22 +34,42 @@ export class PontuacaoPage {
   /**
    * getPontuações
    */
-  public getPontuacoes(): Array<Score> {
+  public getPontuacoes(n: number): Object {
 
-    //for (let index of this.pontuacoes) {
-      this.acertos[1] = this.pontuacaoService.getAcertos(1)
-      this.erros[1] = this.pontuacaoService.getAcertos(1)
-      this.aproveitamento[1] = Math.round(this.pontuacaoService.getAcertos(1))
-    //}
+    let pontuacoes = this.pontuacaoService.getPontuacao(n)
+    console.log("Pontuacao recebida: ", pontuacoes)
 
-    return this.pontuacoes
+    return pontuacoes
   }
+
+  /*
+   * getArrayPontuacoes
+   */
+  public getArrayPontuacoes(): Array<Object> {
+    let arrayPontuacoes = []
+
+    for (let index = 1; index <= this.cont; index++) {
+      let obj = this.pontuacaoService.getPontuacao(index)
+      arrayPontuacoes.push(obj)
+    }
+
+    //console.log("Array de objetos recebido: ", arrayPontuacoes)
+
+    return arrayPontuacoes
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PontuacaoPage');
     this.cont = this.pontuacaoService.getContagem()
-    this.getPontuacoes()
-    //console.log(this.pontuacoesAtuais)
+
+    this.pontuacaoObj_1 = this.pontuacaoService.getPontuacao(1)
+    this.pontuacaoObj_2 = this.pontuacaoService.getPontuacao(2)
+    this.pontuacaoObj_3 = this.pontuacaoService.getPontuacao(3)
+    this.pontuacaoObj_4 = this.pontuacaoService.getPontuacao(4)
+
+    this.pontuacoesAtuais = this.getArrayPontuacoes()
+    console.log("Pontuações Atuais: ", this.pontuacoesAtuais)
   }
 
 }

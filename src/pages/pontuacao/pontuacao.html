@@ -9,22 +9,76 @@
 
 <ion-content padding>
 
-    <ion-list *ngIf="cont">
-        <ion-list-header>
-            Partida {{ cont }}
-          </ion-list-header>
-        <ion-item>
-          <ion-icon name="checkmark-circle" item-start></ion-icon>
-          Acertos: {{ acertos }}
-        </ion-item>
-        <ion-item>
-          <ion-icon name="close-circle" item-start></ion-icon>
-          Erros: {{ erros }}
-        </ion-item>
-        <ion-item>
-          <ion-icon name="happy" item-start></ion-icon>
-          Aproveitamento: {{ aproveitamento }}%
-        </ion-item>
-      </ion-list>
+  <ion-list *ngFor="let pontuacao of pontuacoesAtuais">
+    <ion-list-header>
+      Partida {{ pontuacao.id }}
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Acertos: {{ pontuacao.acertos }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Erros: {{ pontuacao.erros }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="happy" item-start></ion-icon>
+      Aproveitamento: {{ pontuacao.aproveitamento }}%
+    </ion-item>
+  </ion-list>
+
+  <!-- 
+  <ion-list *ngIf="cont">
+    <ion-list-header>
+      Partida {{ pontuacaoObj_2.id }}
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Acertos: {{ pontuacaoObj_2.acertos }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Erros: {{ pontuacaoObj_2.erros }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="happy" item-start></ion-icon>
+      Aproveitamento: {{ pontuacaoObj_2.aproveitamento }}%
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="cont">
+    <ion-list-header>
+      Partida {{ pontuacaoObj_3.id }}
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Acertos: {{ pontuacaoObj_3.acertos }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Erros: {{ pontuacaoObj_3.erros }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="happy" item-start></ion-icon>
+      Aproveitamento: {{ pontuacaoObj_3.aproveitamento }}%
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="cont">
+    <ion-list-header>
+      Partida {{ pontuacaoObj_4.id }}
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="checkmark-circle" item-start></ion-icon>
+      Acertos: {{ pontuacaoObj_4.acertos }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="close-circle" item-start></ion-icon>
+      Erros: {{ pontuacaoObj_4.erros }}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="happy" item-start></ion-icon>
+      Aproveitamento: {{ pontuacaoObj_4.aproveitamento }}%
+    </ion-item>
+  </ion-list>
+  -->
 
 </ion-content>

@@ -1,33 +1,48 @@
-import { Score } from '../../models/score';
-
 export class PontuacaoService {
-    public pontuacoes: Array<Score>
 
     /**
      * contagem da partida
      */
     public contagem(n: number) {
-        if( Number(localStorage.getItem("cont")) == 0 ){
+        if (Number(localStorage.getItem("cont")) == 0) {
             localStorage.setItem("cont", JSON.stringify(n))
         } else {
             n = n + (Number(localStorage.getItem("cont")))
             localStorage.setItem("cont", JSON.stringify(n))
-          }
+        }
     }
 
-  
+
     /**
      * setPontuação
      */
     public setPontuação(acertos: number, erros: number, aproveitamento: number) {
-        localStorage.setItem("acertos_" + localStorage.getItem("cont"), JSON.stringify(acertos))
-        localStorage.setItem("erros_" + localStorage.getItem("cont"), JSON.stringify(erros))
-        localStorage.setItem("aproveitamento_" + localStorage.getItem("cont"), JSON.stringify(aproveitamento))    
+        let pontuacaoObj = {
+            id: 0,
+            acertos: 0,
+            erros: 0,
+            aproveitamento: 0
+        }
+
+        pontuacaoObj.id = Number(localStorage.getItem("cont"))
+        pontuacaoObj.acertos = acertos
+        pontuacaoObj.erros = erros
+        pontuacaoObj.aproveitamento = aproveitamento
+
+        localStorage.setItem("pontuacaoObj_" + localStorage.getItem("cont"), JSON.stringify(pontuacaoObj))
     }
 
     /**
      * getPontuação
      */
+    public getPontuacao(n: number): Object {
+        return JSON.parse(localStorage.getItem("pontuacaoObj_" + n))
+    }
+
+    public getArrayPontuacoes(): Array<Object> {
+        return JSON.parse(localStorage.getItem("pontuacoes"))
+    }
+
     public getAcertos(n: number): number {
         return Number(localStorage.getItem("acertos_" + n))
     }
