@@ -43,6 +43,10 @@ export class RegisterPage {
     this.navCtrl.setRoot(LoginPage)
   }
 
+  public login(){
+    this.navCtrl.setRoot(LoginPage)
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');

@@ -39,7 +39,8 @@ export class PontuacaoPage {
   }
 
   /*
-   * getArrayPontuacoes
+   * getArrayPontuacoes: função que retorna um array com todas as pontuações salvas no localStorage até
+   * o momento
    */
   public getArrayPontuacoes(): Array<Object> {
     let arrayPontuacoes = []
