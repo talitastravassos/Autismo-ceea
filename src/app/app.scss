@@ -60,14 +60,14 @@ ion-col, ion-card-title {
     font: 15px arial, sans-serif;
     color: #32CD32;
     text-align: center;
-    font-size: 20px;
+    //font-size: 20px;
     font-weight: bold;
 }
 
-p{
-    font: 15px arial, sans-serif;
-    text-align: left;
-    font-size: 18px;
+p, ion-card-content{
+    font: 18px arial, sans-serif;
+    text-align: justify;
+    //font-size: 20px;
     font-weight: normal;
 }
 

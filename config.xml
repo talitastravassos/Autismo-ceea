@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Autismo - CEEA</name>
+<widget id="ceea.autismo.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CEEA - Autismo</name>
     <description>Aplicativo híbrido desenvolvid com o IONIC 3</description>
     <author email="talitatravassos.tt@gmail.com" href="http://ionicframework.com/">Talita S. T.</author>
     <content src="index.html" />
