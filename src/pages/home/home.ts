@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { LoginPage } from '../login/login';
+import { AboutPage } from '../about/about';
 import { JogoPage } from '../jogo/jogo';
 import { RodadaProvider } from '../../providers/rodada/rodada';
 import { UserdataProvider } from '../../providers/userdata/userdata';
@@ -37,6 +38,10 @@ export class HomePage {
 
   goToScores(){
     this.navCtrl.push(PontuacaoPage)
+  }
+
+  goToAbout(){
+    this.navCtrl.push(AboutPage)
   }
 
   logout(){

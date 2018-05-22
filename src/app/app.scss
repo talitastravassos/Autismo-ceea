@@ -56,8 +56,9 @@
     margin-right: auto;
 }
 
-ion-col, ion-card-title{
+ion-col, ion-card-title {
     font: 15px arial, sans-serif;
+    color: #32CD32;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -84,6 +85,11 @@ p{
   .btn-gplus {
     background-color: #E04006
   }
+
+.all-page {
+  background: url("../assets/imgs/bg.jpg") no-repeat;
+  background-size: cover;
+}
 
 // style for auth pages
 .auth-page {
@@ -117,11 +123,7 @@ p{
           background: url("../assets/imgs/logo.png") no-repeat;
           background-size: 100%;
         }
-  
-        .list-form {
-          padding: 0;
-          margin-bottom: 0;
-  
+
           ion-item {
             background: none;
             padding: 0;
@@ -146,7 +148,31 @@ p{
         }
       }
     }
+  
+
+//List CSS
+
+ion-list {
+  background: none;
+  padding: 0;
+
+  &:first-child {
+    border-top: none;
   }
+
+  &:after {
+    display: none;
+  }
+
+  ion-label {
+    font-size: 1em;
+    color: color($colors, dark);
+  }
+
+  ion-item {
+    color: color($colors, primary);
+  }
+}
 
 // Animate CSS
 .animated {

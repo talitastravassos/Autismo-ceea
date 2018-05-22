@@ -7,23 +7,29 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="all-page">
+
+  <div padding class="animated fadeInDown logo">
+    <img src="assets/imgs/logo.png">
+  </div>
 
   <ion-list>
     <ion-item>
-      <ion-icon name="checkmark-circle" item-start></ion-icon>
-      Acertos: {{ acertos }}
+      <ion-icon color="primary" name="checkmark-circle" item-start></ion-icon>
+      <strong>Acertos:</strong> {{ acertos }}
     </ion-item>
     <ion-item>
-      <ion-icon name="close-circle" item-start></ion-icon>
-      Erros: {{ erros }}
+      <ion-icon color="danger" name="close-circle" item-start></ion-icon>
+      <strong>Erros:</strong> {{ erros }}
     </ion-item>
     <ion-item>
-      <ion-icon name="happy" item-start></ion-icon>
-      Aproveitamento: {{ aproveitamentoRodada() }}%
+      <ion-icon color="dark" name="happy" item-start></ion-icon>
+      <strong>Aproveitamento:</strong> {{ aproveitamentoRodada() }}%
     </ion-item>
   </ion-list>
 
-  <button ion-button block (click)="resetRodada()"> INICIO </button>
+  <button ion-button block color="dark" round (click)="resetRodada()">
+    <strong>INICIO</strong>
+  </button>
 
 </ion-content>

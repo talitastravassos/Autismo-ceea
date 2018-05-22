@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="all-page">
 
   <div padding class="animated fadeInDown logo">
     <img src="assets/imgs/logo.png">
@@ -13,8 +13,9 @@
   <br>
 
   <div class="botao">
-  <button ion-button color="dark" block (click)="jogo()"> INICIAR JOGO </button>
-    <button ion-button color="danger" block (click)="goToScores()"> PONTUAÇÕES </button>
+    <button ion-button color="dark" block round (click)="jogo()"> <strong>INICIAR JOGO</strong></button>
+    <button ion-button color="dark" block round (click)="goToScores()"> <strong>PONTUAÇÕES</strong> </button>
+    <button ion-button color="dark" block round (click)="goToAbout()"> <strong>SOBRE</strong> </button>
   </div>
   <!--
   <ion-fab right bottom>
@@ -23,7 +24,7 @@
     </button>
   </ion-fab>-->
   <ion-fab left bottom>
-    <button ion-fab (click)="logout()">
+    <button ion-fab color="dark" (click)="logout()">
       <ion-icon name="log-out"></ion-icon>
     </button>
   </ion-fab>

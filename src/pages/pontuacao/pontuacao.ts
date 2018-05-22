@@ -52,7 +52,7 @@ export class PontuacaoPage {
 
     //console.log("Array de objetos recebido: ", arrayPontuacoes)
 
-    return arrayPontuacoes
+    return arrayPontuacoes.reverse()
   }
 
 

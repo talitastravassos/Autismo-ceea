@@ -7,23 +7,24 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="all-page">
 
   <ion-list *ngFor="let pontuacao of pontuacoesAtuais">
     <ion-list-header>
-      Partida {{ pontuacao.id }}
+      <strong>Partida {{ pontuacao.id }}</strong>
     </ion-list-header>
     <ion-item>
-      <ion-icon name="checkmark-circle" item-start></ion-icon>
-      Acertos: {{ pontuacao.acertos }}
+      <ion-icon color="primary" name="checkmark-circle" item-start></ion-icon>
+      <strong>Acertos:</strong> {{ pontuacao.acertos }}
     </ion-item>
     <ion-item>
-      <ion-icon name="close-circle" item-start></ion-icon>
-      Erros: {{ pontuacao.erros }}
+      <ion-icon color="danger" name="close-circle" item-start></ion-icon>
+      <strong>Erros:</strong> {{ pontuacao.erros }}
     </ion-item>
     <ion-item>
-      <ion-icon name="happy" item-start></ion-icon>
-      Aproveitamento: {{ pontuacao.aproveitamento }}%
+      <ion-icon color="dark" name="happy" item-start></ion-icon>
+      <strong>Aproveitamento:</strong> {{ pontuacao.aproveitamento }}%
     </ion-item>
   </ion-list>
+
 </ion-content>

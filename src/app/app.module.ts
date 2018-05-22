@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
+import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { JogoPage } from '../pages/jogo/jogo';
 import { RespostaPage } from '../pages/resposta/resposta';
@@ -24,6 +25,7 @@ import { RodadaProvider } from '../providers/rodada/rodada';
 @NgModule({
   declarations: [
     MyApp,
+    AboutPage,
     CartaoComponent,
     HomePage,
     LoginPage,
@@ -42,6 +44,7 @@ import { RodadaProvider } from '../providers/rodada/rodada';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AboutPage,
     HomePage,
     LoginPage,
     RegisterPage,
