@@ -108,8 +108,8 @@ p, ion-card-content{
   
     .scroll-content {
       display: flex;
-      align-items: top;
-      justify-content: top;
+      align-items: center;
+      justify-content: center;
       //background: rgba(50, 10, 92, .4);
   
       .login-content {
@@ -118,7 +118,7 @@ p, ion-card-content{
         .logo {
           width: 200px;
           height: 200px;
-          margin: 190px auto 0;
+          margin: 20px auto 0;
           border-radius: 10%;
           background: url("../assets/imgs/logo.png") no-repeat;
           background-size: 100%;
@@ -138,7 +138,7 @@ p, ion-card-content{
   
             ion-label {
               font-size: 1em;
-              color: color($colors, primary);
+              color: #189ad3;
             }
   
             input {
@@ -192,7 +192,7 @@ ion-list {
   .animated.flipOutY,
   .animated.bounceIn,
   .animated.bounceOut {
-    animation-duration: .55s;
+    animation-duration: .75s;
   }
   
   @keyframes fadeIn {
@@ -212,7 +212,7 @@ ion-list {
   @keyframes fadeInDown {
     from {
       opacity: 0;
-      transform: translate3d(0, -90%, 0);
+      transform: translate3d(0, -100%, 0);
     }
   
     to {
