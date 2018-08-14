@@ -54,7 +54,7 @@ export class HomePage {
     //console.log('ionViewDidLoad HomePage');
 
     this.authFire.authState.subscribe( data => console.log(data) );
-
+    
   }
 
 }
