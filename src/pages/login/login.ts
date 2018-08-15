@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { HomePage } from './../home/home';
+import firebase from '../../../node_modules/firebase';
 
 @IonicPage()
 @Component({
@@ -30,26 +31,33 @@ export class LoginPage {
     }).present();
   }
 
-async login(user: User) {
-  try {
-    const result = await this.loginAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-    console.log(result);
-    console.log('Usuário entrou no sistema com sucesso.');
-    this.alert("Sucesso! Voce entrou no sistema.");
-    if (result) {
-      this.navCtrl.setRoot(HomePage);
+  async login(user: User) {
+    try {
+      const result = await this.loginAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      console.log(result);
+      console.log('Usuário entrou no sistema com sucesso.');
+      this.alert("Sucesso! Voce entrou no sistema.");
+      if (result) {
+        this.navCtrl.setRoot(HomePage);
+      }
+    } catch (error) {
+      this.alert(error.message);
+      console.log(error);
     }
-  } catch (error) {
-    this.alert(error.message);
-    console.log(error);
-  }
-}
-register(){
-  this.navCtrl.push(RegisterPage);
-}
 
-ionViewDidLoad() {
-  console.log('ionViewDidLoad LoginPage');
-}
+    
+  }
+
+  loginWithGoogle() {
+    this.loginAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  register() {
+    this.navCtrl.push(RegisterPage);
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
+  }
 
 }
