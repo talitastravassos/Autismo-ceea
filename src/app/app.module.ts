@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { UserdataProvider } from '../providers/userdata/userdata';
 import { RodadaProvider } from '../providers/rodada/rodada';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { RodadaProvider } from '../providers/rodada/rodada';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserdataProvider,
-    RodadaProvider
+    RodadaProvider,
+    GooglePlus
   ]
 })
 export class AppModule {

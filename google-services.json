@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "669230760855",
+    "firebase_url": "https://autismo-ceea.firebaseio.com",
+    "project_id": "autismo-ceea",
+    "storage_bucket": "autismo-ceea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669230760855:android:925f8fa9e1a7094b",
+        "android_client_info": {
+          "package_name": "io.ceea.autismoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669230760855-dpbp80h56lvsvihgn1dkplsg24k6mqbd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ceea.autismoapp",
+            "certificate_hash": "4e0dc92c6682e70e83c554b9161e61544979ebfc"
+          }
+        },
+        {
+          "client_id": "669230760855-eo33mvetovj47fdl2psgimit485rrja5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ2wN9Wmt6pEKLZcCZy73E8ZCygxx_w24"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669230760855-eo33mvetovj47fdl2psgimit485rrja5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
