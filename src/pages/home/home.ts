@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth'
+import { RodadaProvider } from '../../providers/rodada/rodada';
+import { UserdataProvider } from '../../providers/userdata/userdata';
 import { LoginPage } from '../login/login';
 import { AboutPage } from '../about/about';
 import { JogoPage } from '../jogo/jogo';
-import { RodadaProvider } from '../../providers/rodada/rodada';
-import { UserdataProvider } from '../../providers/userdata/userdata';
 import { PontuacaoPage } from '../pontuacao/pontuacao';
+import { TreinoPage } from '../treino/treino';
 
 @Component({
   selector: 'page-home',
@@ -42,6 +43,10 @@ export class HomePage {
 
   goToAbout(){
     this.navCtrl.push(AboutPage)
+  }
+
+  goToTreino(){
+    this.navCtrl.push(TreinoPage)
   }
 
   logout(){

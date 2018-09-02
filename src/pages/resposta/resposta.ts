@@ -48,7 +48,7 @@ export class RespostaPage {
 
     if (this.navParams.get("acertos")) {
       this.acertos++
-      if (cont == 5) {
+      if (cont == 10) {
         this.navCtrl.setRoot(ResultadoPage)
       } else {
         this.navCtrl.push(JogoPage);
@@ -56,7 +56,7 @@ export class RespostaPage {
     }
     if (this.navParams.get("erros")) {
       this.erros++
-      if (cont == 5) {
+      if (cont == 10) {
         this.navCtrl.setRoot(ResultadoPage)
       } else {
         this.navCtrl.push(JogoPage);

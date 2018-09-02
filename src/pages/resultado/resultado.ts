@@ -41,7 +41,7 @@ export class ResultadoPage {
    * aproveitamento
    */
   public aproveitamentoRodada(): number {
-    this.aproveitamento = (this.acertos/5) * 100;
+    this.aproveitamento = (this.acertos/10) * 100;
 
     return Math.round(this.aproveitamento)    
   }

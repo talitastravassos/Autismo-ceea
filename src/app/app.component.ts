@@ -34,21 +34,11 @@ export class MyApp {
       this.authFire.authState.subscribe( (data) => {
         if(data == null){
           this.rootPage = LoginPage;
-        }else {
+        } else {
           this.rootPage = HomePage;
           console.log(data)
         }
       });
-
-      /*
-      let config = userDataProvider.getConfigData();
-      if (config == null){
-        this.rootPage = LoginPage;
-        userDataProvider.setConfigData(false);
-      } else {
-        this.rootPage = HomePage;
-      }
-      console.log(config);*/
 
       statusBar.styleDefault();
       splashScreen.hide();

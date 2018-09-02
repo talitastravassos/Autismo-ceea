@@ -11,6 +11,7 @@ import { JogoPage } from '../pages/jogo/jogo';
 import { RespostaPage } from '../pages/resposta/resposta';
 import { ResultadoPage } from './../pages/resultado/resultado';
 import { PontuacaoPage } from '../pages/pontuacao/pontuacao';
+import { TreinoPage } from '../pages/treino/treino';
 import { CartaoComponent } from '../components/cartao/cartao.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,7 +35,8 @@ import { GooglePlus } from '@ionic-native/google-plus';
     RespostaPage,
     ResultadoPage,
     JogoPage,
-    PontuacaoPage
+    PontuacaoPage,
+    TreinoPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { GooglePlus } from '@ionic-native/google-plus';
     RespostaPage,
     ResultadoPage,
     JogoPage,
-    PontuacaoPage    
+    PontuacaoPage,
+    TreinoPage    
   ],
   providers: [
     StatusBar,
