@@ -53,7 +53,8 @@ export class LoginPage {
     /* Versão Web */
     this.loginAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 
-    /* versão mobile
+    // versão mobile
+    /*
     this.googlePlus.login({
       'webClientId': '669230760855-eo33mvetovj47fdl2psgimit485rrja5.apps.googleusercontent.com',
       'offline': true
