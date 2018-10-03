@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { JogoPage } from '../pages/jogo/jogo';
@@ -31,6 +32,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
     CartaoComponent,
     HomePage,
     LoginPage,
+    ResetPasswordPage,
     RegisterPage,
     RespostaPage,
     ResultadoPage,
@@ -50,6 +52,7 @@ import { GooglePlus } from '@ionic-native/google-plus';
     AboutPage,
     HomePage,
     LoginPage,
+    ResetPasswordPage,
     RegisterPage,
     RespostaPage,
     ResultadoPage,

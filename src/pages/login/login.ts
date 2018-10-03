@@ -6,6 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth'
 import { GooglePlus } from '@ionic-native/google-plus';
 import { HomePage } from './../home/home';
 import firebase from '../../../node_modules/firebase';
+import { ResetPasswordPage } from '../reset-password/reset-password';
 
 @IonicPage()
 @Component({
@@ -38,7 +39,7 @@ export class LoginPage {
       const result = await this.loginAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
       console.log('Usuário entrou no sistema com sucesso.');
-      this.alert("Sucesso! Voce entrou no sistema.");
+      this.alert("Bem-Vindo!");
       if (result) {
         this.navCtrl.setRoot(HomePage);
       }
@@ -46,6 +47,10 @@ export class LoginPage {
       this.alert(error.message);
       console.log(error);
     }
+  }
+
+  forgotPass(){
+    this.navCtrl.push(ResetPasswordPage);
   }
 
   loginWithGoogle() {
