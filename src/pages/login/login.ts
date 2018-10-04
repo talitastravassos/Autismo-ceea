@@ -5,7 +5,7 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { GooglePlus } from '@ionic-native/google-plus';
 import { HomePage } from './../home/home';
-import firebase from '../../../node_modules/firebase';
+import firebase from 'firebase';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 
 @IonicPage()
@@ -28,13 +28,14 @@ export class LoginPage {
   alert(message: string) {
     this.alertCtrl.create({
 
-      title: 'Info!',
+      title: 'Hey!',
       subTitle: message,
       buttons: ['OK']
     }).present();
   }
 
   async login(user: User) {
+
     try {
       const result = await this.loginAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
@@ -47,6 +48,7 @@ export class LoginPage {
       this.alert(error.message);
       console.log(error);
     }
+
   }
 
   forgotPass(){

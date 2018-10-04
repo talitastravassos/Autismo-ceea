@@ -62,4 +62,14 @@ export class PontuacaoService {
         return Number(localStorage.getItem("cont"))
     }
 
+    /**
+     * deleteScores
+     */
+    public deleteScores() {
+        let cont = this.getContagem();
+
+        
+        
+    }
+
 }

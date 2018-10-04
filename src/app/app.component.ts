@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform, Config } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { UserdataProvider } from '../providers/userdata/userdata';
 import { RodadaProvider } from '../providers/rodada/rodada';
 
 import { HomePage } from './../pages/home/home';
@@ -13,7 +12,6 @@ import { AngularFireAuth } from '../../node_modules/angularfire2/auth';
 @Component({
   templateUrl: 'app.html',
   providers: [
-    UserdataProvider,
     RodadaProvider
   ]
 })
@@ -24,7 +22,6 @@ export class MyApp {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    userDataProvider: UserdataProvider,
     private authFire: AngularFireAuth) {
       platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

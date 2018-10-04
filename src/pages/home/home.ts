@@ -32,7 +32,7 @@ export class HomePage {
     this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
-  jogo(){
+  game(){
     this.rodadaProvider.resetData()
     this.navCtrl.push(JogoPage)
   }
@@ -45,20 +45,20 @@ export class HomePage {
     this.navCtrl.push(AboutPage)
   }
 
-  goToTreino(){
+  goToTraining(){
     this.navCtrl.push(TreinoPage)
   }
 
   logout(){
     this.authFire.auth.signOut();
     this.userDataProvider.resetConfigData();
-    this.navCtrl.setRoot(LoginPage);
+    localStorage.clear();
+    //this.navCtrl.setRoot(LoginPage);
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad HomePage');
-
-    this.authFire.authState.subscribe( data => console.log(data) );
+    console.log('ionViewDidLoad HomePage');
+    //this.authFire.authState.subscribe( data => console.log(data) );
     
   }
 

@@ -9,7 +9,7 @@
 
 <ion-content padding class="all-page">
 
-  <ion-list *ngFor="let pontuacao of pontuacoesAtuais">
+  <ion-list class="margin-top-bottom" *ngFor="let pontuacao of pontuacoesAtuais">
     <ion-list-header>
       <strong> PARTIDA {{ pontuacao.id }}</strong>
     </ion-list-header>
@@ -25,7 +25,6 @@
       <ion-icon color="dark" name="happy" item-start></ion-icon>
       <strong>Aproveitamento:</strong> {{ pontuacao.aproveitamento }}%
     </ion-item>
-    <HR WIDTH=30% ALIGN=RIGHT NOSHADE>
   </ion-list>
 
 </ion-content>
