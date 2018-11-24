@@ -74,7 +74,10 @@ export class LoginPage {
           }).catch(err =>{
             this.alert("Erro! Usuário não entrou no sistema");
           })
-      }); */
+      });
+      */
+      
+     
   }
 
   register() {
