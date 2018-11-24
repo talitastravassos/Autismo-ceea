@@ -1,8 +1,8 @@
 {
   "name": "CEEA - Autismo",
   "version": "1.0.2",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Talita S Travassos",
+  "homepage": "https://github.com/talitastravassos",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
