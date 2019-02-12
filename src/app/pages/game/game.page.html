@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-back-button  color="light"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card class="container">
+    <ion-row>
+      <ion-col>
+        <div>
+          {{ match }} de 10
+        </div>
+      </ion-col>
+    </ion-row>
+    <img src="{{ card.image }}" class="imagem" />
+    <ion-card-content class="container">
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card class="container all-page">
+    <ion-card-content class="botao">
+      <ion-card-title>
+        O que está acontecendo na imagem exibida na tela?
+      </ion-card-title>
+      <ion-button shade="round" color="success" (click)="verifyAnswer(button1)"><strong>{{ button1.title }}</strong> </ion-button>
+      <ion-button shade="round" color="dark" (click)="verifyAnswer(button2)"><strong>{{ button2.title }}</strong></ion-button>
+      <ion-button shade="round" color="danger" (click)="verifyAnswer(button3)"><strong>{{ button3.title }}</strong></ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

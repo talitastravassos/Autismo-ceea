@@ -1,44 +1,26 @@
 import { Component } from '@angular/core';
-import { Platform, Config } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { RodadaProvider } from '../providers/rodada/rodada';
 
-import { HomePage } from './../pages/home/home';
-import { LoginPage } from '../pages/login/login';
-import { AngularFireAuth } from '../../node_modules/angularfire2/auth';
-
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  templateUrl: 'app.html',
-  providers: [
-    RodadaProvider
-  ]
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
 })
-export class MyApp {
-  rootPage: any;
-
+export class AppComponent {
   constructor(
-    platform: Platform,
-    statusBar: StatusBar,
-    splashScreen: SplashScreen,
-    private authFire: AngularFireAuth) {
-      platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar
+  ) {
+    this.initializeApp();
+  }
 
-      /* Verifica se o usuario estar logado e o redireciona para a HomePage ou LoginPage */
-      this.authFire.authState.subscribe( (data) => {
-        if(data == null){
-          this.rootPage = LoginPage;
-        } else {
-          this.rootPage = HomePage;
-          console.log(data)
-        }
-      });
-
-      statusBar.styleDefault();
-      splashScreen.hide();
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 }

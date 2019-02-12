@@ -1,74 +1,27 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { RouteReuseStrategy } from '@angular/router';
 
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from './../pages/register/register';
-import { ResetPasswordPage } from '../pages/reset-password/reset-password';
-import { AboutPage } from '../pages/about/about';
-import { HomePage } from '../pages/home/home';
-import { JogoPage } from '../pages/jogo/jogo';
-import { RespostaPage } from '../pages/resposta/resposta';
-import { ResultadoPage } from './../pages/resultado/resultado';
-import { PontuacaoPage } from '../pages/pontuacao/pontuacao';
-import { TreinoPage } from '../pages/treino/treino';
-import { CartaoComponent } from '../components/cartao/cartao.component';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFireModule } from 'angularfire2'
-import { AngularFireAuthModule } from 'angularfire2/auth'
-import { FIREBASE_CONFIG } from './app.firebase.config';
-import { UserdataProvider } from '../providers/userdata/userdata';
-import { RodadaProvider } from '../providers/rodada/rodada';
-import { GooglePlus } from '@ionic-native/google-plus';
-
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    AboutPage,
-    CartaoComponent,
-    HomePage,
-    LoginPage,
-    ResetPasswordPage,
-    RegisterPage,
-    RespostaPage,
-    ResultadoPage,
-    JogoPage,
-    PontuacaoPage,
-    TreinoPage
-  ],
+    AppComponent],
+  entryComponents: [],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    AboutPage,
-    HomePage,
-    LoginPage,
-    ResetPasswordPage,
-    RegisterPage,
-    RespostaPage,
-    ResultadoPage,
-    JogoPage,
-    PontuacaoPage,
-    TreinoPage    
-  ],
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserdataProvider,
-    RodadaProvider,
-    GooglePlus
-  ]
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-  
-}
+export class AppModule {}

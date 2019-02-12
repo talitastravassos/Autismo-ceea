@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Bem-Vindo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="all-page">
+
+  <div padding class="animated fadeInDown logo">
+    <img src="assets/imgs/logo.png">
+  </div>
+
+  <br>
+
+  <div class="botao">
+    <ion-button color="dark" expand="block" shade="round" (click)="game()"> <strong>INICIAR JOGO</strong></ion-button>
+    <ion-button color="dark" expand="block" shade="round" (click)="goToTraining()"> <strong>CARTÕES</strong></ion-button>
+    <ion-button color="dark" expand="block" shade="round" (click)="goToScores()"> <strong>PONTUAÇÕES</strong> </ion-button>
+    <ion-button color="dark" expand="block" shade="round" (click)="goToAbout()"> <strong>SOBRE</strong> </ion-button>
+  </div>
+  <!--
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button color="dark" (click)="logout()"> Sair
+        <ion-icon name="log-out"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  -->
+
+</ion-content>

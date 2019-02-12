@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="all-page">
+
+  <ion-card *ngIf="currentCard">
+    <img src="{{ currentCard.image }}" class="imagem-resposta" />
+    <ion-card-content class="container">
+      <ion-card-title>
+        {{ isCorrect() }}
+
+      </ion-card-title>
+      <p>
+        <strong>Ação: {{ currentCard.title }}</strong>
+      </p>
+      <p>
+        Descrição: {{ currentCard.description }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <br>
+
+  <ion-button color="dark" expand="block" shade="round" (click)="next()"><strong>PRÓXIMO</strong></ion-button>
+
+
+</ion-content>

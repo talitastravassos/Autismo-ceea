@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    <ion-title>Cartões</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="all-page">
+
+    <ion-card class="margin-top-bottom" *ngFor="let card of cards">
+        <img src="{{ card.image }}" class="imagem-resposta" />
+        <ion-card-content class="container">
+          <ion-card-title>
+            <p>
+              <strong>Nome: {{ card.title }} </strong>
+            </p>
+          </ion-card-title>
+          <p>
+            <strong>Imagem Número {{ card.id }} </strong>
+          </p>
+          <p>
+            <strong>Tipo:</strong> {{ card.type }}
+          </p>
+          <p>
+            <strong>Descrição: </strong> {{ card.description }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>
